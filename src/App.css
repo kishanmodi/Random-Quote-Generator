@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@500&family=PT+Serif:ital@1&family=Spectral:ital,wght@0,400;1,400;1,500&display=swap');
+* {
+	margin: 0px;
+	padding: 0px;
+	color: white;
+	font-family: 'Spectral', serif;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+html,
+body {
+	height: 100vh;
+	width: 100%;
+}
+.image-box {
+	height: auto;
+	width: 100vw;
+	opacity: 0;
+	animation: fadeMe 0.5s ease-out;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+	background-image: linear-gradient(
+		to right,
+		rgba(179, 49, 95, 0.5),
+		rgba(58, 0, 117, 0.5)
+	);
+	background: url('https://source.unsplash.com/random/1920x1080?city,night,flower,nature,books,japan,sea,forest')
+		no-repeat center center fixed;
+}
+
+@keyframes fadeMe {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes fadeMe {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.main-container {
+	min-height: 100vh;
+	max-height: 100%;
+	background-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0.2),
+		rgba(0, 0, 0, 0.8)
+	);
+	display: grid;
+	place-content: center;
+	position: relative;
+	width: 100%;
+}
+
+.main-container #clock {
+	position: absolute;
+	top: 2%;
+	right: 2%;
+	font-size: 75px;
+}
+.inner-container {
+	margin: 150px;
+	padding: 50px;
+	background: rgba(255, 255, 255, 0.21);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(0px);
+	-webkit-backdrop-filter: blur(0px);
+	position: relative;
+}
+
+#quote {
+	text-align: center;
+	font-size: 40px;
+}
+#who-said-this {
+	position: absolute;
+	right: 4%;
+	bottom: 5%;
+	font-size: 22px;
+}
+#refresh {
+	position: absolute;
+	bottom: 8%;
+	left: 1%;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	background-color: #efefef16;
+	outline: none;
+	border: none;
+}
+
+#refresh:hover {
+	background-color: #efefef46;
+	transition: 1s ease-out;
+}
+
+.main-container #author {
+	position: absolute;
+	right: 1%;
+	bottom: 1%;
+	font-size: 16px;
+	font-family: 'Domine', serif;
+}
+
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: underline;
+}
+@media screen and (max-width: 900px) {
+	.inner-container {
+		margin: 50px;
+		padding: 30px;
+		padding-bottom: 40px;
+		position: relative;
+	}
+	#who-said-this {
+		position: absolute;
+		right: 4%;
+		bottom: 4%;
+		font-size: 20px;
+	}
+	#quote {
+		font-size: 35px;
+	}
+	#refresh {
+		bottom: 3%;
+		left: 2%;
+		height: 25px;
+		width: 25px;
+	}
+	.main-container #clock {
+		position: relative;
+		left: 0;
+		right: 0;
+		top: 0%;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 30px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	#who-said-this {
+		position: absolute;
+		right: 4%;
+		bottom: 2%;
+		font-size: 17px;
+	}
+	.main-container #author {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.main-container #clock {
+		font-size: 50px;
+		font-size: 8vw;
+	}
+	#quote {
+		font-size: 30px;
+		font-size: calc(42px + (60 - 42) * (100vw - 768px) / (1440 - 768));
+	}
+}
